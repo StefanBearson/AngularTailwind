@@ -7,13 +7,13 @@ const routes: Routes = [
     path: '',
     component: ContentLayoutComponent,
     children: [
-      // {
-      //   path: '',
-      //   loadChildren: () => import('./app.component').then((m) => m.AppComponent)
-      // }
+      { path: 'about', loadChildren: () => import('./modules/about/about.module').then(m => m.AboutModule) },
+      { path: 'info', loadChildren: () => import('./modules/info/info.module').then(m => m.InfoModule) },
 
     ]
-  }
+  },
+  // { path: 'info', loadChildren: () => import('./modules/info/info.module').then(m => m.InfoModule) },
+  // { path: 'about', loadChildren: () => import('./about/about.module').then(m => m.AboutModule) }
 
 ];
 
