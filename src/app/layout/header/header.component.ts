@@ -12,7 +12,13 @@ export class HeaderComponent implements OnInit {
   darkmode = false;
   toggledarkmodeText = "Go Dark..."
 
-  toggleDarkmode(){
+  toggleMenu() {
+      document.querySelectorAll("[data-dropdown].active").forEach(dropdown => {
+        dropdown.classList.remove("active")
+      })
+  }
+
+  toggleDarkmode() {
     console.log("runs")
     if(!this.darkmode){
       console.log("dark")
