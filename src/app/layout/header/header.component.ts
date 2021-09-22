@@ -9,8 +9,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  darkmode = false;
+  toggledarkmodeText = "Go Dark..."
 
-  
+  toggleDarkmode(){
+    console.log("runs")
+    if(!this.darkmode){
+      console.log("dark")
+      document.documentElement.classList.add('dark')
+      this.toggledarkmodeText = "Bring me the light!";
+      this.darkmode = true
+    }else{
+      console.log("light")
+      document.documentElement.classList.remove('dark')
+      this.toggledarkmodeText = "Go Dark...";
+      this.darkmode = false
+    }
+  }
   constructor() {
     
    }

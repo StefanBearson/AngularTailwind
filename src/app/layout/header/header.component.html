@@ -1,17 +1,19 @@
-<div class="header">  
+<div class="header justify-between dark:bg-gray-900"> 
   <div class="dropdown" data-dropdown>
     <button class="link" data-dropdown-button>Menu</button>
+
+    
     <div class="dropdown-menu information-grid">
       <div class="dropdown-menu-row">
         <a routerLink="/about" class="link">
         <div class=" dropdown-menu-item">
-            <p class="dropdown-menu-item-icon">A</p>
+            <p class="dropdown-menu-item-icon"><span class="mdi mdi-home"></span></p>
             <p class="dropdown-menu-item-text">about</p>
         </div>
       </a>
       <a routerLink="/info" class="link">
         <div class="dropdown-menu-item" >
-          <p class="dropdown-menu-item-icon">A</p>
+          <p class="dropdown-menu-item-icon"><span class="mdi mdi-account-cowboy-hat"></span></p>
           <p class="dropdown-menu-item-text">INFO</p>
         </div>
       </a>
@@ -60,6 +62,7 @@
       </div>
     </div>
   </div>
-
+  <button (click)="toggleDarkmode()" class="btn right-0">{{toggledarkmodeText}}</button> 
 </div>
+
 <div class="bg-gray-400">Hello world</div>
