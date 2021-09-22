@@ -5,13 +5,13 @@
     
     <div class="dropdown-menu information-grid">
       <div class="dropdown-menu-row">
-        <a routerLink="/about" class="link" (click)="toggleMenu()">
-        <div class=" dropdown-menu-item">
+        <a routerLink="/about" class="link" (click)="toggleMenu($event)" link-button>
+        <div class="dropdown-menu-item">
             <p class="dropdown-menu-item-icon"><span class="mdi mdi-home"></span></p>
             <p class="dropdown-menu-item-text">about</p>
         </div>
       </a>
-      <a routerLink="/info" class="link" (click)="toggleMenu()">
+      <a routerLink="/info" class="link" (click)="toggleMenu($event)" link-button>
         <div class="dropdown-menu-item" >
           <p class="dropdown-menu-item-icon"><span class="mdi mdi-account-cowboy-hat"></span></p>
           <p class="dropdown-menu-item-text">INFO</p>
@@ -19,27 +19,13 @@
       </a>
       </div>
       <div class="dropdown-menu-row">
-        <a href="#" class="link" (click)="toggleMenu()">
+        <a routerLink="/" class="link" (click)="toggleMenu($event)" link-button>
           <div class="dropdown-menu-item">
             <p class="dropdown-menu-item-icon">A</p>
-            <p class="dropdown-menu-item-text">test</p>
+            <p class="dropdown-menu-item-text">Home</p>
           </div>
         </a>
-        <a href="#" class="link" (click)="toggleMenu()">
-          <div class="dropdown-menu-item">
-            <p class="dropdown-menu-item-icon">A</p>
-            <p class="dropdown-menu-item-text">test</p>
-          </div>
-        </a>
-      </div>
-      <div class="dropdown-menu-row">
-        <a href="#" class="link" (click)="toggleMenu()">
-          <div class="dropdown-menu-item">
-            <p class="dropdown-menu-item-icon">A</p>
-            <p class="dropdown-menu-item-text">test</p>
-          </div>
-        </a>
-        <a href="#" class="link" (click)="toggleMenu()">
+        <a href="#" class="link" (click)="toggleMenu($event)" link-button>
           <div class="dropdown-menu-item">
             <p class="dropdown-menu-item-icon">A</p>
             <p class="dropdown-menu-item-text">test</p>
@@ -47,13 +33,27 @@
         </a>
       </div>
       <div class="dropdown-menu-row">
-        <a href="#" class="link" (click)="toggleMenu()">
+        <a href="#" class="link" (click)="toggleMenu($event)" link-button>
           <div class="dropdown-menu-item">
             <p class="dropdown-menu-item-icon">A</p>
             <p class="dropdown-menu-item-text">test</p>
           </div>
         </a>
-        <a href="#" class="link" (click)="toggleMenu()">
+        <a href="#" class="link" (click)="toggleMenu($event)" link-button>
+          <div class="dropdown-menu-item">
+            <p class="dropdown-menu-item-icon">A</p>
+            <p class="dropdown-menu-item-text">test</p>
+          </div>
+        </a>
+      </div>
+      <div class="dropdown-menu-row">
+        <a href="#" class="link" (click)="toggleMenu($event)" link-button>
+          <div class="dropdown-menu-item">
+            <p class="dropdown-menu-item-icon">A</p>
+            <p class="dropdown-menu-item-text">test</p>
+          </div>
+        </a>
+        <a href="#" class="link" (click)="toggleMenu($event)" link-button>
           <div class="dropdown-menu-item">
             <p class="dropdown-menu-item-icon">A</p>
             <p class="dropdown-menu-item-text">test</p>

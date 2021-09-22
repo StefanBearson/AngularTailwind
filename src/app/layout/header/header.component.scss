@@ -81,6 +81,10 @@ body {
   justify-content: center;
   align-items: center;
 }
+a.link.active > * {
+  background-color: rgb(189, 144, 144);
+}
+
 .dropdown-menu-item-icon{
   font-size: xx-large;
   text-align: center;
