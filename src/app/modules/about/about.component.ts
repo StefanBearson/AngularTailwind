@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -12,4 +13,14 @@ export class AboutComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  menuClick(event){
+    document.querySelectorAll(".menu-btn").forEach(button => {
+      button.classList.remove("active")
+    })
+    event.path.map(element => {
+      console.log(element.classList)
+      if(element.classList == "menu-btn")
+        element.classList.add("active")
+    });
+  }
 }

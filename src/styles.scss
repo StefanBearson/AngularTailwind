@@ -7,3 +7,16 @@
 .btn {
   @apply bg-blue-500 hover:bg-gray-500 text-white font-bold py-1 px-2 rounded
 }
+
+.menu-btn {
+  @apply rounded-full bg-gray-900 w-8 h-8 text-center text-gray-500 text-lg align-middle
+}
+
+.menu-btn:hover {
+  width: 64px;
+}
+
+.menu-btn.active {
+  @apply bg-gray-300;
+  width: 64px;
+}
