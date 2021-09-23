@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
-
+  text = "Try press on a number"
   constructor() { }
 
   ngOnInit(): void {
@@ -18,9 +18,11 @@ export class AboutComponent implements OnInit {
       button.classList.remove("active")
     })
     event.path.map(element => {
-      console.log(element.classList)
       if(element.classList == "menu-btn")
         element.classList.add("active")
     });
+
+    console.dir(event)
+    this.text = "This is a new Text: " + event.target.innerHTML + "!"
   }
 }
