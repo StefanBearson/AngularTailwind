@@ -24,6 +24,6 @@ export class AboutComponent implements OnInit {
     });
 
     console.dir(event)
-    this.text = "This is a new Text: " + event.target.innerHTML + "!"
+    this.text = faker.lorem.words(30);
   }
 }
