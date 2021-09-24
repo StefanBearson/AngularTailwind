@@ -55,12 +55,12 @@
         </a>
       </div>
       <div class="p-2 flex justify-between text-gray-400">
-        <div>The active user</div>
+        <div>{{user}}</div>
         <div>        
 
             <span class="mdi mdi-cog pr-2"></span>
  
-            <span class="mdi  mdi-logout"></span>
+            <span (click)="onLogout()" class="mdi  mdi-logout"></span>
           
         </div>
 

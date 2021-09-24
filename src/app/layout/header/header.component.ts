@@ -1,6 +1,7 @@
 // @ts-nocheck
 import { Component, OnInit } from '@angular/core';
-
+import { Observable } from 'rxjs';
+import { UserServiceService } from 'src/app/core/services/user-service.service';
 
 
 @Component({
@@ -11,6 +12,7 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   darkmode = false;
   toggledarkmodeText = "Go Dark..."
+  user: string;
 
   toggleMenu(event) {
       document.querySelectorAll("[data-dropdown].active").forEach(dropdown => {
@@ -38,11 +40,15 @@ export class HeaderComponent implements OnInit {
       this.darkmode = false
     }
   }
-  constructor() {
-    
+  constructor(private userService: UserServiceService) {
+    this.userService.getUser().subscribe(data=>{
+      this.user = data
+    })
    }
 
   ngOnInit() {
+    this.user = this.userService.getUser();
+
     document.addEventListener("click", e => {
       const isDropdownButton = e.target.matches("[data-dropdown-button]")
       if (!isDropdownButton && e.target.closest("[data-dropdown]") != null) return
@@ -59,5 +65,12 @@ export class HeaderComponent implements OnInit {
         dropdown.classList.remove("active")
       })
     })
+  }
+  onLogout():void {
+    document.querySelectorAll("[data-dropdown].active").forEach(dropdown => {
+      dropdown.classList.remove("active")
+    })
+
+    this.userService.setUser("No user active")
   }
 }
