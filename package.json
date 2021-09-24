@@ -21,6 +21,8 @@
     "@mdi/font": "^6.1.95",
     "@tailwindcss/forms": "^0.3.3",
     "@tailwindcss/typography": "^0.4.1",
+    "@types/faker": "^5.5.8",
+    "faker": "^5.5.3",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

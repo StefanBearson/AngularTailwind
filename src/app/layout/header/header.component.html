@@ -1,24 +1,22 @@
-<div class="header justify-between dark:bg-gray-900"> 
+<div class="header justify-between bg-gray-500 text-gray-100"> 
   <div class="dropdown" data-dropdown>
     <button class="link" data-dropdown-button>Menu</button>
 
     
-    <div class="dropdown-menu information-grid">
-      <div class="dropdown-menu-row">
+    <div class="dropdown-menu divide-y-2 divide-gray-300 divide-solid bg-white dark:bg-gray-800">
+      <div class="grid grid-cols-4 gap-3 p-2">
         <a routerLink="/about" class="link" (click)="toggleMenu($event)" link-button>
-        <div class="dropdown-menu-item">
-            <p class="dropdown-menu-item-icon"><span class="mdi mdi-home"></span></p>
-            <p class="dropdown-menu-item-text">about</p>
-        </div>
-      </a>
-      <a routerLink="/info" class="link" (click)="toggleMenu($event)" link-button>
-        <div class="dropdown-menu-item" >
-          <p class="dropdown-menu-item-icon"><span class="mdi mdi-account-cowboy-hat"></span></p>
-          <p class="dropdown-menu-item-text">INFO</p>
-        </div>
-      </a>
-      </div>
-      <div class="dropdown-menu-row">
+          <div class="dropdown-menu-item">
+              <p class="dropdown-menu-item-icon"><span class="mdi mdi-home"></span></p>
+              <p class="dropdown-menu-item-text">about</p>
+          </div>
+        </a>
+        <a routerLink="/info" class="link" (click)="toggleMenu($event)" link-button>
+          <div class="dropdown-menu-item" >
+            <p class="dropdown-menu-item-icon"><span class="mdi mdi-account-cowboy-hat"></span></p>
+            <p class="dropdown-menu-item-text">INFO</p>
+          </div>
+        </a>
         <a routerLink="/" class="link" (click)="toggleMenu($event)" link-button>
           <div class="dropdown-menu-item">
             <p class="dropdown-menu-item-icon">A</p>
@@ -31,8 +29,18 @@
             <p class="dropdown-menu-item-text">test</p>
           </div>
         </a>
-      </div>
-      <div class="dropdown-menu-row">
+        <a href="#" class="link" (click)="toggleMenu($event)" link-button>
+          <div class="dropdown-menu-item">
+            <p class="dropdown-menu-item-icon">A</p>
+            <p class="dropdown-menu-item-text">test</p>
+          </div>
+        </a>
+        <a href="#" class="link" (click)="toggleMenu($event)" link-button>
+          <div class="dropdown-menu-item">
+            <p class="dropdown-menu-item-icon">A</p>
+            <p class="dropdown-menu-item-text">test</p>
+          </div>
+        </a>
         <a href="#" class="link" (click)="toggleMenu($event)" link-button>
           <div class="dropdown-menu-item">
             <p class="dropdown-menu-item-icon">A</p>
@@ -46,23 +54,19 @@
           </div>
         </a>
       </div>
-      <div class="dropdown-menu-row">
-        <a href="#" class="link" (click)="toggleMenu($event)" link-button>
-          <div class="dropdown-menu-item">
-            <p class="dropdown-menu-item-icon">A</p>
-            <p class="dropdown-menu-item-text">test</p>
-          </div>
-        </a>
-        <a href="#" class="link" (click)="toggleMenu($event)" link-button>
-          <div class="dropdown-menu-item">
-            <p class="dropdown-menu-item-icon">A</p>
-            <p class="dropdown-menu-item-text">test</p>
-          </div>
-        </a>
+      <div class="p-2 flex justify-between text-gray-400">
+        <div>The active user</div>
+        <div>        
+
+            <span class="mdi mdi-cog pr-2"></span>
+ 
+            <span class="mdi  mdi-logout"></span>
+          
+        </div>
+
       </div>
     </div>
   </div>
-  <button (click)="toggleDarkmode()" class="btn right-0">{{toggledarkmodeText}}</button> 
+  <button (click)="toggleDarkmode()" class="btn right-0 bg-gray-900 text-gray-500 dark:text-gray-500 dark:bg-gray-100">{{toggledarkmodeText}}</button> 
 </div>
 
-<div class="bg-gray-400">Hello world</div>

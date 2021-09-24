@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { Component, OnInit } from '@angular/core';
-
+import * as faker from 'faker'
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
@@ -11,8 +11,9 @@ export class AboutComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.text = faker.lorem.words(30);
   }
-
+ 
   menuClick(event){
     document.querySelectorAll(".menu-btn").forEach(button => {
       button.classList.remove("active")
