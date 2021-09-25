@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./show-case.component.scss']
 })
 export class ShowCaseComponent implements OnInit {
+  openTab = 1;
+  toggleTabs($tabNumber: number){
+    this.openTab = $tabNumber;
+  }
 
   constructor() { }
 

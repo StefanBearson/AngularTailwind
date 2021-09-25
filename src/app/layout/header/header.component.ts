@@ -17,6 +17,7 @@ export class HeaderComponent implements OnInit {
   toggleMenu(event) {
       document.querySelectorAll("[data-dropdown].active").forEach(dropdown => {
         dropdown.classList.remove("active")
+        
       })
 
       document.querySelectorAll("[link-button].active").forEach(link => {
