@@ -9,9 +9,10 @@ const routes: Routes = [
     children: [
       { path: 'about', loadChildren: () => import('./modules/about/about.module').then(m => m.AboutModule) },
       { path: 'info', loadChildren: () => import('./modules/info/info.module').then(m => m.InfoModule) },
-
+      { path: 'showCase', loadChildren: () => import('./modules/show-case/show-case.module').then(m => m.ShowCaseModule) },
     ]
   },
+  
   // { path: 'info', loadChildren: () => import('./modules/info/info.module').then(m => m.InfoModule) },
   // { path: 'about', loadChildren: () => import('./about/about.module').then(m => m.AboutModule) }
 
