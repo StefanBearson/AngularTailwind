@@ -5,10 +5,10 @@ import { ShowCaseRoutingModule } from './show-case-routing.module';
 import { ShowCaseComponent } from './show-case.component';
 
 import { ButtonsComponent } from './buttons/buttons.component';
-
+import { TabelsComponent } from './tabels/tabels.component';
 @NgModule({
   declarations: [
-    ShowCaseComponent, ButtonsComponent
+    ShowCaseComponent, ButtonsComponent, TabelsComponent
   ],
   imports: [
     CommonModule,

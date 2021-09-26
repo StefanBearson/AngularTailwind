@@ -8,7 +8,9 @@ export class UserServiceService {
 // user:string = "No User active";
 
 
-constructor() { }
+constructor() {
+  this.user.next("no active user")
+ }
 
 private user: BehaviorSubject<string> = new BehaviorSubject<string>("test");
 

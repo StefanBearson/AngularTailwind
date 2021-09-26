@@ -3,17 +3,17 @@
     <div class="w-full items-center">
       <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row">
         <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-          <a class="text-xs font-bold uppercase px-5 py-3 shadow-md border border-gray-200 rounded block leading-normal" (click)="toggleTabs(1)" [ngClass]="{'text-pink-600 bg-white': openTab !== 1, 'text-white bg-pink-600': openTab === 1}">
+          <a class="text-xs font-bold uppercase px-5 py-3 shadow-md border border-gray-200 rounded block leading-normal" (click)="toggleTabs(1)" [ngClass]="{'text-red-300 bg-white': openTab !== 1, 'text-white bg-red-300': openTab === 1}">
             <i class="fas fa-space-shuttle text-base mr-1"></i> Buttons
           </a>
         </li>
         <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-          <a class="text-xs font-bold uppercase px-5 py-3 shadow-md border border-gray-200 rounded block leading-normal" (click)="toggleTabs(2)" [ngClass]="{'text-pink-600 bg-white': openTab !== 2, 'text-white bg-pink-600': openTab === 2}">
+          <a class="text-xs font-bold uppercase px-5 py-3 shadow-md border border-gray-200 rounded block leading-normal" (click)="toggleTabs(2)" [ngClass]="{'text-red-300 bg-white': openTab !== 2, 'text-white bg-red-300': openTab === 2}">
             <i class="fas fa-cog text-base mr-1"></i> Tabels
           </a>
         </li>
         <li class="-mb-px last:mr-0 flex-auto text-center">
-          <a class="text-xs font-bold uppercase px-5 py-3 shadow-md border border-gray-200 rounded block leading-normal" (click)="toggleTabs(3)" [ngClass]="{'text-pink-600 bg-white': openTab !== 3, 'text-white bg-pink-600': openTab === 3}">
+          <a class="text-xs font-bold uppercase px-5 py-3 shadow-md border border-gray-200 rounded block leading-normal" (click)="toggleTabs(3)" [ngClass]="{'text-red-300 bg-white': openTab !== 3, 'text-white bg-red-300': openTab === 3}">
             <i class="fas fa-briefcase text-base mr-1"></i> Forms
           </a>
         </li>
@@ -26,7 +26,7 @@
             </div>       
             <div [ngClass]="{'hidden': openTab !== 2, 'block': openTab === 2}">
               <p>
-                Coming soon!
+                <app-tabels></app-tabels>
               </p>
             </div>
             <div [ngClass]="{'hidden': openTab !== 3, 'block': openTab === 3}">

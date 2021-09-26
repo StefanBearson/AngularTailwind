@@ -15,9 +15,15 @@
 .btn-text{
   @apply bg-white hover:bg-white  text-red-300 font-semibold py-0 px-2  align-middle hover:text-red-500
 }
+
+.btn-core{
+  @apply hover:bg-white text-white font-semibold py-0 px-2 align-middle
+}
 .menu-btn {
   @apply rounded-full bg-gray-900 w-8 h-8 text-center text-gray-500 text-lg align-middle
 }
+
+
 
 .menu-btn:hover {
   width: 64px;

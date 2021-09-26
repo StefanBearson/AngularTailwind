@@ -12,7 +12,7 @@ import { UserServiceService } from 'src/app/core/services/user-service.service';
 export class HeaderComponent implements OnInit {
   darkmode = false;
   toggledarkmodeText = "Go Dark..."
-  user: string;
+  user: string = "no active user!"
 
   toggleMenu(event) {
       document.querySelectorAll("[data-dropdown].active").forEach(dropdown => {
