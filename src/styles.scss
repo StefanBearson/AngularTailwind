@@ -5,9 +5,16 @@
 @import '@mdi/font/scss/materialdesignicons.scss';
 
 .btn {
-  @apply hover:bg-gray-500 hover:text-gray-100 text-gray-500 font-bold py-1 px-2 rounded
+  @apply bg-transparent hover:border-red-500 text-red-300 font-semibold py-0 px-2 border border-red-300 hover:border-transparent align-middle
 }
 
+.btn-solid {
+  @apply bg-red-300 hover:bg-white hover:text-red-300 text-white font-semibold py-0 px-2 border border-red-300 hover:border-transparent align-middle
+}
+
+.btn-text{
+  @apply bg-white hover:bg-white  text-red-300 font-semibold py-0 px-2  align-middle hover:text-red-500
+}
 .menu-btn {
   @apply rounded-full bg-gray-900 w-8 h-8 text-center text-gray-500 text-lg align-middle
 }
