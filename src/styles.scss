@@ -4,6 +4,9 @@
 
 @import '@mdi/font/scss/materialdesignicons.scss';
 
+
+
+//Button
 .btn {
   @apply bg-transparent hover:border-red-500 text-red-300 font-semibold py-0 px-2 border border-red-300 hover:border-transparent align-middle
 }
@@ -23,13 +26,15 @@
   @apply rounded-full bg-gray-900 w-8 h-8 text-center text-gray-500 text-lg align-middle
 }
 
-
-
-.menu-btn:hover {
-  width: 64px;
+// Table
+.table-header-cell {
+  @apply px-6 bg-gray-50 text-gray-500 align-middle py-3 text-xs uppercase whitespace-nowrap font-semibold text-left border-b border-b-2 border-red-300
 }
 
-.menu-btn.active {
-  @apply bg-gray-300;
-  width: 64px;
+.table-body-cell {
+  @apply border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-1 text-left text-gray-700
+}
+
+.table-row:nth-child(even){
+  @apply bg-red-100
 }
