@@ -25,16 +25,11 @@
               <app-buttons></app-buttons>   
             </div>       
             <div [ngClass]="{'hidden': openTab !== 2, 'block': openTab === 2}">
-              <p>
-                <app-tabels></app-tabels>
-              </p>
+              <app-tabels></app-tabels>
             </div>
             <div [ngClass]="{'hidden': openTab !== 3, 'block': openTab === 3}">
-              <p>
-                Coming soon!
-              </p>
-            </div>
-          
+              <app-forms></app-forms>
+            </div>   
           </div>  
         </div>
       </div>
