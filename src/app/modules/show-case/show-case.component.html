@@ -12,9 +12,14 @@
             <i class="fas fa-cog text-base mr-1"></i> Tabels
           </a>
         </li>
-        <li class="-mb-px last:mr-0 flex-auto text-center">
+        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
           <a class="text-xs font-bold uppercase px-5 py-3 shadow-md border border-gray-200 rounded block leading-normal" (click)="toggleTabs(3)" [ngClass]="{'text-red-300 bg-white': openTab !== 3, 'text-white bg-red-300': openTab === 3}">
             <i class="fas fa-briefcase text-base mr-1"></i> Forms
+          </a>
+        </li>
+        <li class="-mb-px last:mr-0 flex-auto text-center">
+          <a class="text-xs font-bold uppercase px-5 py-3 shadow-md border border-gray-200 rounded block leading-normal" (click)="toggleTabs(4)" [ngClass]="{'text-red-300 bg-white': openTab !== 4, 'text-white bg-red-300': openTab === 4}">
+            <i class="fas fa-briefcase text-base mr-1"></i> DropDowns
           </a>
         </li>
       </ul>
@@ -30,6 +35,9 @@
             <div [ngClass]="{'hidden': openTab !== 3, 'block': openTab === 3}">
               <app-forms></app-forms>
             </div>   
+            <div [ngClass]="{'hidden': openTab !== 4, 'block': openTab === 3}">
+              <app-dropdown></app-dropdown>
+            </div> 
           </div>  
         </div>
       </div>

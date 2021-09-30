@@ -65,7 +65,7 @@ body {
   display: block;
   flex-direction: column;
   gap: .25rem;
-  color:#fdaa83;
+  // color:#fdaa83;
   // background-color: rgb(219, 219, 219);
   // border: 1px solid rgb(209, 209, 209);
   border-radius: 2px;
@@ -79,11 +79,12 @@ body {
 }
 
 .dropdown-menu-item:hover{
-  color: #F65E16;
+  // color: #F65E16;
 }
 a.link.active > * {
-  border: 2px solid #fdaa83;
-  border-radius: 8px;
+  // border: 2px solid #fdaa83;
+  // border-radius: 8px;
+  @apply text-red-900
 }
 
 .dropdown-menu-item-icon{

@@ -7,9 +7,10 @@ import { ShowCaseComponent } from './show-case.component';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { TabelsComponent } from './tabels/tabels.component';
 import { FormsComponent } from './forms/forms.component';
+import { DropdownComponent } from './dropdown/dropdown.component';
 @NgModule({
   declarations: [
-    ShowCaseComponent, ButtonsComponent, TabelsComponent, FormsComponent
+    ShowCaseComponent, ButtonsComponent, TabelsComponent, FormsComponent, DropdownComponent
   ],
   imports: [
     CommonModule,
