@@ -3,7 +3,6 @@ body {
 }
 
 .header {
-  background-color: #F3F3F3;
   display: flex;
   align-items: baseline;
   padding: .5rem;
@@ -14,7 +13,6 @@ body {
   background: none;
   border: none;
   text-decoration: none;
-  color: #777;
   font-family: inherit;
   font-size: inherit;
   cursor: pointer;
@@ -23,7 +21,7 @@ body {
 
 .dropdown.active > .link,
 .link:hover {
-  color: black;
+
 }
 
 .dropdown {
@@ -34,7 +32,6 @@ body {
   position: absolute;
   left: 0;
   top: calc(100% + .25rem);
-  background-color: white;
   padding: .75rem;
   border-radius: .25rem;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
@@ -70,7 +67,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: .25rem;
-  background-color: rgb(219, 219, 219);
   border: 1px solid rgb(209, 209, 209);
   border-radius: 2px;
   margin: 2px;
