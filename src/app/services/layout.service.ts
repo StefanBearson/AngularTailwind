@@ -1,36 +1,23 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LayoutService {
-  
-  private rightSidebarOpen: boolean;
-  private leftSidebarOpen: boolean;
 
+  private rightSidebarOpen: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  private leftSidebarOpen: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  rightSidebarOpen$ = this.rightSidebarOpen.asObservable();
+  leftSidebarOpen$ = this.leftSidebarOpen.asObservable();
 
-  constructor() {
-    this.rightSidebarOpen = false;
-    this.leftSidebarOpen = false;
-  }
+  constructor() { }
 
   toggleRightSideBar(){
-    console.log("R Runs, ", this.rightSidebarOpen);
-    this.rightSidebarOpen = !this.rightSidebarOpen;
+    this.rightSidebarOpen.next(!this.rightSidebarOpen.getValue());
   }
 
   toggleLeftSidebar(){
-    console.log("L Runs, ", this.leftSidebarOpen);
-    this.leftSidebarOpen = !this.leftSidebarOpen;
+    this.leftSidebarOpen.next(!this.leftSidebarOpen.getValue());
   }
-
-  rightSidebarIsOpen(): Observable<boolean> {
-    return of(this.rightSidebarOpen);
-  }
-
-  leftSidebarIsOpen(): Observable<boolean> {
-    return of(this.leftSidebarOpen);
-  }
-
 }
