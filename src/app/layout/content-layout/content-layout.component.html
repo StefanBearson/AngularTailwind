@@ -4,14 +4,14 @@
   <app-header></app-header>
   <div class="flex h-full">
     <div id="left-sidebar" [ngClass]="{'hidden': !(leftOpen$ | async)}" class="bg-slate-400 w-[200px]">
-      testar {{leftOpen$ | async}}
+      <app-menu></app-menu>
     </div>
     <div id="content" class="grow">
       content
       <router-outlet></router-outlet>
     </div>
     <div id="right-sidebar" [ngClass]="{'hidden': !(rightOpen$ | async)}" class="bg-slate-400 w-[200px]">
-  testar 2 {{rightOpen$ | async}}
+      <app-options></app-options>
     </div>
   </div>
 
