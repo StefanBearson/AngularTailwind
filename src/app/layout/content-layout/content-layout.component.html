@@ -1,16 +1,15 @@
 
 <div class="flex flex-col h-screen">
   <app-new-header></app-new-header>
-  <app-header></app-header>
+  <!-- <app-header></app-header> -->
   <div class="flex h-full">
-    <div id="left-sidebar" [ngClass]="{'hidden': !(leftOpen$ | async)}" class="bg-slate-400 w-[200px]">
+    <div id="left-sidebar" [@openleft]="(leftOpen$ | async) ? 'open' : 'closed'" class="overflow-hidden bg-slate-400">
       <app-menu></app-menu>
     </div>
     <div id="content" class="grow">
-      content
       <router-outlet></router-outlet>
     </div>
-    <div id="right-sidebar" [ngClass]="{'hidden': !(rightOpen$ | async)}" class="bg-slate-400 w-[200px]">
+    <div id="right-sidebar" [@openright]="(rightOpen$ | async) ? 'open' : 'closed'" class="overflow-hidden bg-slate-400">
       <app-options></app-options>
     </div>
   </div>
