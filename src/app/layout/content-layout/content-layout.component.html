@@ -6,7 +6,7 @@
     <div id="left-sidebar" [ngClass]="{'hidden': !(leftOpen$ | async)}" class="bg-slate-400 w-[200px]">
       testar {{leftOpen$ | async}}
     </div>
-    <div id="content" class="bg-red-400 grow">
+    <div id="content" class="grow">
       content
       <router-outlet></router-outlet>
     </div>
