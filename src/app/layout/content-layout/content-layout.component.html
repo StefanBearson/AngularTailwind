@@ -1,5 +1,20 @@
-<app-new-header></app-new-header>
-<app-header></app-header>
-<div class="content-wrapper">
-  <router-outlet></router-outlet>
+
+<div class="flex flex-col h-screen">
+  <app-new-header></app-new-header>
+  <app-header></app-header>
+  <div class="flex h-full">
+    <div id="left-sidebar" [ngClass]="{'hidden': !(leftOpen$ | async)}" class="bg-slate-400 w-[200px]">
+      testar {{leftOpen$ | async}}
+    </div>
+    <div id="content" class="bg-red-400 grow">
+      content
+      <router-outlet></router-outlet>
+    </div>
+    <div id="right-sidebar" [ngClass]="{'hidden': !(rightOpen$ | async)}" class="bg-slate-400 w-[200px]">
+  testar 2 {{rightOpen$ | async}}
+    </div>
+  </div>
+
+
+  <div class="w-full p-2 text-center bg-slate-800 text-slate-200">footer</div>
 </div>
