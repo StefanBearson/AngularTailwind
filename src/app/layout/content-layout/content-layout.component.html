@@ -5,7 +5,7 @@
     <div class="flex h-full">
       <div id="left-sidebar" 
         [@openleft]="(leftOpen$ | async) ? 'open' : 'closed'" 
-        class="flex flex-col bg-slate-400 w-[200px]">
+        class="flex flex-col bg-slate-50 dark:bg-slate-800 w-[200px]">
         <div class="w-[200px]"></div>
         <app-menu></app-menu>
       </div>
@@ -14,7 +14,7 @@
       </div>
       <div id="right-sidebar" 
       [@openright]="(rightOpen$ | async) ? 'open' : 'closed'" 
-      class="flex flex-col bg-slate-400 w-[200px]">
+      class="flex flex-col bg-slate-50 dark:bg-slate-800 w-[200px]">
         <div class="w-[200px]"></div>
         <app-options></app-options>
       </div>

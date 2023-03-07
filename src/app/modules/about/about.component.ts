@@ -17,6 +17,7 @@ export class AboutComponent implements OnInit, OnChanges {
   ngOnInit(): void {
     this.leftOpen$ = this.layoutService.leftSidebarOpen$;
     this.rightOpen$ = this.layoutService.rightSidebarOpen$;
+    this.layoutService.changePageName("About");
   }
   ngOnChanges(){
 

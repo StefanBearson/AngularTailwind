@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { LayoutService } from '../../services/layout.service'
 
 
@@ -9,10 +10,16 @@ import { LayoutService } from '../../services/layout.service'
   providers: [ ]
 })
 export class NewHeaderComponent implements OnInit {
+  title$!: Observable<string>;
+  pageName$!: Observable<string>;
+  pageDescription$!: Observable<string>;
 
   constructor(private layoutService: LayoutService) { }
 
   ngOnInit() {
+    this.title$ = this.layoutService.title$;
+    this.pageName$ = this.layoutService.pageName$;
+    this.pageDescription$ = this.layoutService.pageDescription$;
   }
 
   public toggleLeftSidebar(){
@@ -24,3 +31,12 @@ export class NewHeaderComponent implements OnInit {
   }
 
 }
+
+// leftOpen$!: Observable<boolean>;
+// rightOpen$!: Observable<boolean>;
+// constructor(private layoutService: LayoutService) { }
+
+// ngOnInit() {
+//   this.leftOpen$ = this.layoutService.leftSidebarOpen$;
+//   this.rightOpen$ = this.layoutService.rightSidebarOpen$;
+// }

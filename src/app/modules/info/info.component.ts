@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { LayoutService } from 'src/app/services/layout.service';
 @Component({
   selector: 'app-info',
   templateUrl: './info.component.html',
@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private layoutService: LayoutService) { }
 
   ngOnInit(): void {
+    this.layoutService.changePageName('Info');
   }
 
 }
