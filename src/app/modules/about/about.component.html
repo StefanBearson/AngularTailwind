@@ -1,16 +1,32 @@
-<p>about works!</p>
-<span class="mdi mdi-home">This is a Thing</span>
 
-<div>test right: {{rightOpen$ | async}}</div>
-<div>test left: {{leftOpen$ | async}}</div>
+<div class="">
+  <p class="p-2 text-center">about works!</p>
+  <span class="p-2 mdi mdi-home">This is a Thing  <i class="dx-icon-email"></i></span>
 
-<dx-button
-  text="Hello"
-  icon="email">
-
-</dx-button>
-
-<i class="dx-icon-email"></i>
-
-
-
+  <div class="flex flex-wrap content-center w-full gap-2 p-2">
+    <dx-button
+      text="Hello"
+      icon="email">
+    </dx-button>
+    <dx-button
+      text="success"
+      icon="email"
+      type="success">
+    </dx-button>
+    <dx-button
+      text="default"
+      icon="email"
+      type="default">
+    </dx-button>
+    <dx-button
+      text="danger"
+      icon="email"
+      type="danger">
+    </dx-button>
+    <dx-button
+      text="warning"
+      icon="email"
+      type="warning">
+    </dx-button>
+  </div>
+</div>
