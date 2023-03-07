@@ -1,66 +1,15 @@
-<div class="header justify-between dark:bg-gray-900 border-b-2 border-neutral-400 dark:border-neutral-600">
-  <div class="dropdown" data-dropdown>
-    <button class="link text-gray-400 hover:text-gray-800 dark:text-red-200 dark:hover:text-red-400" data-dropdown-button>Menu</button>
-
-
-    <div class="dropdown-menu information-grid dark:bg-gray-900 border-2 bg-gray-400">
-      <div class="dropdown-menu-row">
-        <a routerLink="/about" class="link" (click)="toggleMenu($event)" link-button>
-        <div class="dropdown-menu-item">
-            <p class="dropdown-menu-item-icon"><span class="mdi mdi-home"></span></p>
-            <p class="dropdown-menu-item-text">about</p>
-        </div>
-      </a>
-      <a routerLink="/info" class="link" (click)="toggleMenu($event)" link-button>
-        <div class="dropdown-menu-item" >
-          <p class="dropdown-menu-item-icon"><span class="mdi mdi-account-cowboy-hat"></span></p>
-          <p class="dropdown-menu-item-text">INFO</p>
-        </div>
-      </a>
-      </div>
-      <div class="dropdown-menu-row">
-        <a routerLink="/" class="link" (click)="toggleMenu($event)" link-button>
-          <div class="dropdown-menu-item">
-            <p class="dropdown-menu-item-icon">A</p>
-            <p class="dropdown-menu-item-text">Home</p>
-          </div>
-        </a>
-        <a href="#" class="link" (click)="toggleMenu($event)" link-button>
-          <div class="dropdown-menu-item">
-            <p class="dropdown-menu-item-icon">A</p>
-            <p class="dropdown-menu-item-text">test</p>
-          </div>
-        </a>
-      </div>
-      <div class="dropdown-menu-row">
-        <a href="#" class="link" (click)="toggleMenu($event)" link-button>
-          <div class="dropdown-menu-item">
-            <p class="dropdown-menu-item-icon">A</p>
-            <p class="dropdown-menu-item-text">test</p>
-          </div>
-        </a>
-        <a href="#" class="link" (click)="toggleMenu($event)" link-button>
-          <div class="dropdown-menu-item">
-            <p class="dropdown-menu-item-icon">A</p>
-            <p class="dropdown-menu-item-text">test</p>
-          </div>
-        </a>
-      </div>
-      <div class="dropdown-menu-row">
-        <a href="#" class="link" (click)="toggleMenu($event)" link-button>
-          <div class="dropdown-menu-item">
-            <p class="dropdown-menu-item-icon">A</p>
-            <p class="dropdown-menu-item-text">test</p>
-          </div>
-        </a>
-        <a href="#" class="link" (click)="toggleMenu($event)" link-button>
-          <div class="dropdown-menu-item">
-            <p class="dropdown-menu-item-icon">A</p>
-            <p class="dropdown-menu-item-text">test</p>
-          </div>
-        </a>
-      </div>
-    </div>
+<div class="flex border-b-2 dark:border-slate-700">
+  <div class="w-[200px] flex">
+    <button class="flex-1 h-full min-w-full bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200" (click)="toggleLeftSidebar()">MENU</button>
   </div>
-  <button (click)="toggleDarkmode()" class="btn right-0">{{toggledarkmodeText}}</button>
+  <div class="flex-grow">
+    <h1 class="text-2xl text-center">{{title$ | async}}</h1>
+    <h2 class="text-lg text-center">{{pageName$ | async}}</h2>
+    <h5 class="text-sm text-center"> {{pageDescription$ | async}}</h5>
+  </div>
+  <div class="w-[200px] relative flex">
+    <button class="flex-1 h-full min-w-full py-2 bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200" (click)="toggleRightSidebar()">OPTIONS</button>
+  </div>
 </div>
+
+

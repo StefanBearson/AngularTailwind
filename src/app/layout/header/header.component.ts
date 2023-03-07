@@ -1,65 +1,32 @@
-// @ts-nocheck
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { LayoutService } from '../../services/layout.service'
 
-import themes from 'devextreme/ui/themes'
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.css'],
+  providers: [ ]
 })
 export class HeaderComponent implements OnInit {
-  darkmode = false;
-  toggledarkmodeText = "Go Dark..."
+  title$!: Observable<string>;
+  pageName$!: Observable<string>;
+  pageDescription$!: Observable<string>;
 
-  toggleMenu(event) {
-      document.querySelectorAll("[data-dropdown].active").forEach(dropdown => {
-        dropdown.classList.remove("active")
-      })
-
-      document.querySelectorAll("[link-button].active").forEach(link => {
-        link.classList.remove("active")
-      })
-
-      event.path.map(element => {
-        if(element.nodeName == "A")
-          element.classList.add("active")
-      });
-  }
-
-  toggleDarkmode() {
-    if(!this.darkmode){
-      themes.current("generic.dark")
-      document.documentElement.classList.add('dark')
-      this.toggledarkmodeText = "Bring me the light!";
-      this.darkmode = true
-    }else{
-      themes.current("generic.light")
-      document.documentElement.classList.remove('dark')
-      this.toggledarkmodeText = "Go Dark...";
-      this.darkmode = false
-    }
-  }
-  constructor() {
-    
-   }
+  constructor(private layoutService: LayoutService) { }
 
   ngOnInit() {
-    document.addEventListener("click", e => {
-      const isDropdownButton = e.target.matches("[data-dropdown-button]")
-      if (!isDropdownButton && e.target.closest("[data-dropdown]") != null) return
+    this.title$ = this.layoutService.title$;
+    this.pageName$ = this.layoutService.pageName$;
+    this.pageDescription$ = this.layoutService.pageDescription$;
+  }
 
-      let currentDropdown: Element
+  public toggleLeftSidebar(){
+    this.layoutService.toggleLeftSidebar();
+  }
 
-      if (isDropdownButton) {
-        currentDropdown = e.target.closest("[data-dropdown]")
-        currentDropdown.classList.toggle("active")
-      }
-    
-      document.querySelectorAll("[data-dropdown].active").forEach(dropdown => {
-        if (dropdown === currentDropdown) return
-        dropdown.classList.remove("active")
-      })
-    })
+  public toggleRightSidebar(){
+    this.layoutService.toggleRightSideBar();
   }
 }
