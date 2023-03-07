@@ -1,3 +1,12 @@
-<p>
-  grid works!
-</p>
+
+<dx-data-grid
+  [dataSource]="dataSource"
+  [showBorders]="true"
+  [rowAlternationEnabled]="true"
+  [allowColumnReordering]="true">
+  <dxo-selection mode="single"></dxo-selection>
+  <dxi-column dataField="name" dataType="string" caption="Name" [width]="200"></dxi-column>
+  <dxi-column dataField="phone" dataType="string" caption="Phonenumber" [width]="200"></dxi-column>
+  <dxi-column dataField="address" dataType="string" caption="Street" [width]="200"></dxi-column>
+  <dxi-column dataField="city" dataType="string" caption="City Name"></dxi-column>
+</dx-data-grid>
