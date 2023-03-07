@@ -1,19 +1,25 @@
 
 <div class="flex flex-col h-screen">
   <app-new-header></app-new-header>
-  <!-- <app-header></app-header> -->
-  <div class="flex h-full">
-    <div id="left-sidebar" [@openleft]="(leftOpen$ | async) ? 'open' : 'closed'" class="overflow-hidden bg-slate-400">
-      <app-menu></app-menu>
-    </div>
-    <div id="content" class="grow">
-      <router-outlet></router-outlet>
-    </div>
-    <div id="right-sidebar" [@openright]="(rightOpen$ | async) ? 'open' : 'closed'" class="overflow-hidden bg-slate-400">
-      <app-options></app-options>
+  <div class="inline main-content-wrapper">
+    <div class="flex h-full">
+      <div id="left-sidebar" 
+        [@openleft]="(leftOpen$ | async) ? 'open' : 'closed'" 
+        class="flex flex-col bg-slate-400 w-[200px]">
+        <div class="w-[200px]"></div>
+        <app-menu></app-menu>
+      </div>
+      <div id="content" class="flex flex-col w-full overflow-x-hidden overflow-y-auto">
+        <router-outlet></router-outlet>
+      </div>
+      <div id="right-sidebar" 
+      [@openright]="(rightOpen$ | async) ? 'open' : 'closed'" 
+      class="flex flex-col bg-slate-400 w-[200px]">
+        <div class="w-[200px]"></div>
+        <app-options></app-options>
+      </div>
     </div>
   </div>
-
 
   <div class="w-full p-2 text-center bg-slate-800 text-slate-200">footer</div>
 </div>
