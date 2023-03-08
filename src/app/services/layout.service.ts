@@ -25,6 +25,11 @@ export class LayoutService {
     this.leftSidebarOpen.next(!this.leftSidebarOpen.getValue());
   }
 
+  closeAllSidebars(){
+    this.leftSidebarOpen.next(false);
+    this.rightSidebarOpen.next(false);
+  }
+
   changeTitle(title: string){
     this.title$.next(title);
   } 
