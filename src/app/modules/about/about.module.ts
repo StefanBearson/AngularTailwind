@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { DxButtonModule } from 'devextreme-angular'
+import { DxButtonModule, DxToastModule } from 'devextreme-angular'
 
 import { AboutRoutingModule } from './about-routing.module';
 import { AboutComponent } from './about.component';
@@ -14,7 +14,8 @@ import { AboutComponent } from './about.component';
   imports: [
     CommonModule,
     AboutRoutingModule,
-    DxButtonModule
+    DxButtonModule,
+    DxToastModule
   ]
 })
 export class AboutModule { }

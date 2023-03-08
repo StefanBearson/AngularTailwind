@@ -27,7 +27,6 @@ export class GridComponent implements OnInit {
       .subscribe({
         next: (value: Cool[]) => {
           this.dataSource = new DataSource(value);
-          console.log("runs")
         }
       })
   }

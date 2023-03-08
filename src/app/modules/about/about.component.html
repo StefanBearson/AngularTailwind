@@ -5,28 +5,34 @@
 
   <div class="flex flex-wrap content-center w-full gap-2 p-2">
     <dx-button
-      text="Hello"
-      icon="email">
+      text="Toast Test"
+      icon="email"
+      (click)="createToast($event)">
     </dx-button>
     <dx-button
       text="success"
       icon="email"
-      type="success">
+      type="success"
+      (click)="showToast('success')">
     </dx-button>
     <dx-button
       text="default"
       icon="email"
-      type="default">
+      type="default"
+      (click)="showToast('info')">
     </dx-button>
     <dx-button
       text="danger"
       icon="email"
-      type="danger">
+      type="danger"
+      (click)="showToast('error')">
     </dx-button>
     <dx-button
       text="warning"
       icon="email"
-      type="warning">
+      type="warning"
+      (click)="showToast('warning')">
     </dx-button>
   </div>
 </div>
+<dx-toast [(visible)]="toastIsVisible" [type]="type" [message]="message"></dx-toast>
