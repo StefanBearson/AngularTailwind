@@ -64,3 +64,13 @@
     (onItemClick)="itemClick($event)">
   </dx-button-group>
 </div>
+<div class="flex flex-row min-h-[500px] justify-center gap-2">
+<textarea class="w-[45%] p-2" [(ngModel)]="markdown"></textarea>
+<markdown lineNumbers class="w-[45%] p-2 bg-slate-200" [data]="markdown"></markdown>
+</div>
+
+<markdown
+  lineNumbers
+  [start]="5"
+  [data]="markdown">
+</markdown>
