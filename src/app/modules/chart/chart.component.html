@@ -4,18 +4,21 @@
   title="Pizza Shop Complaints"
   palette="Harmony Light"
 >
-  <dxi-value-axis name="frequency" position="left" [tickInterval]="300">
+<dxo-animation>
+
+</dxo-animation>
+  <dxi-value-axis name="frequency" position="left" [tickInterval]="1000">
   </dxi-value-axis>
   <dxi-value-axis
     name="percentage"
     position="right"
     [showZero]="true"
-    [tickInterval]="20"
+    [tickInterval]="25"
     [valueMarginsEnabled]="false"
   >
     <dxo-label [customizeText]="customizeLabelText"></dxo-label>
     <dxi-constant-line
-      [value]="80"
+      [value]="1000"
       color="#fc3535"
       dashStyle="dash"
       [width]="2"
@@ -29,8 +32,23 @@
   <dxo-tooltip
     [enabled]="true"
     [shared]="true"
-    [customizeTooltip]="customizeTooltip"
+    [cornerRadius]="2"
+    contentTemplate="tooltipContent"
   >
+      <dxo-show
+      type="slide"
+      [from]="{ top: -100, opacity: 0 }"
+      [to]="{ opacity: 1, top: 0 }"
+    ></dxo-show>
+    <dxo-hide
+      type="pop"
+      [from]="{ scale: 1, opacity: 1 }"
+      [to]="{ opacity: 0, scale: 0.1 }"
+    ></dxo-hide>
+    <div *dxTemplate="let data = data; of: 'tooltipContent'">
+      <app-tooltip></app-tooltip>
+      <div>test {{this.data}} test</div>
+    </div>
   </dxo-tooltip>
   <dxo-common-series-settings argumentField="complaint">
   </dxo-common-series-settings>

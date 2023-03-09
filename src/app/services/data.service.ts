@@ -15,6 +15,12 @@ export class ComplaintsWithPercent {
   cumulativePercent!: number;
 }
 
+export class Alignment {
+  icon!: string;
+  alignment!: string;
+  hint!: string;
+}
+
 function generateManyCool(items: number) : Cool[]{
 
   let coolThings: Cool[] = [];
@@ -31,16 +37,37 @@ function generateManyCool(items: number) : Cool[]{
 }
 
 const complaintsData: Complaints[] = [
-  { complaint: 'Cold pizza', count: 780 },
-  { complaint: 'Not enough cheese', count: 120 },
-  { complaint: 'Underbaked or Overbaked', count: 52 },
-  { complaint: 'Delayed delivery', count: 1123 },
-  { complaint: 'Damaged pizza', count: 321 },
-  { complaint: 'Incorrect billing', count: 89 },
-  { complaint: 'Wrong size delivered', count: 222 },
+  { complaint: 'Stefan', count: 12000 },
+  { complaint: 'Kalle', count: 15000 },
+  { complaint: 'Musse', count: 8500 },
+  { complaint: 'Sture', count: 9700 },
+  { complaint: 'Lisa', count: 14700 },
+  { complaint: 'Anna', count: 9000 },
+  { complaint: 'Ola', count: 20000 },
 ];
 
-
+const alignments: Alignment[] = [
+  {
+    icon: 'alignleft',
+    alignment: 'left',
+    hint: 'Align left',
+  },
+  {
+    icon: 'aligncenter',
+    alignment: 'center',
+    hint: 'Center',
+  },
+  {
+    icon: 'alignright',
+    alignment: 'right',
+    hint: 'Align right',
+  },
+  {
+    icon: 'alignjustify',
+    alignment: 'justify',
+    hint: 'Justify',
+  },
+];
 @Injectable({providedIn: 'root'})
 export class DataService {
   
@@ -60,5 +87,9 @@ export class DataService {
         cumulativePercent: Math.round(cumulativeCount * 100 / totalCount),
       };
     });
+  }
+
+  getAlignments() : Alignment[] {
+    return alignments;
   }
 }

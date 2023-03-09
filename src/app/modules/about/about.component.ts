@@ -1,10 +1,9 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { LayoutService } from 'src/app/services/layout.service';
+import { DataService, Alignment } from 'src/app/services/data.service';
 import { Observable } from 'rxjs';
 
 import notify from 'devextreme/ui/notify';
-import hideToasts from 'devextreme/ui/toast/hide_toasts';
-
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
@@ -18,8 +17,11 @@ export class AboutComponent implements OnInit, OnChanges {
   type = 'info';
   types: string[] = ['error', 'info', 'success', 'warning'];
   id = 1;
+//buttongroup
+  alignments!: Alignment[];
 
-  constructor(private layoutService: LayoutService) {
+  constructor(private layoutService: LayoutService, private dataService: DataService) {
+    this.alignments = dataService.getAlignments();
   }
 
   ngOnInit(): void {
@@ -40,7 +42,7 @@ export class AboutComponent implements OnInit, OnChanges {
   showToast(type: string){
     const position: any = "top left";
     const direction: any = "down-push"
-
+    const content: any =  "<div>hej hå </div>"
     notify({
       message: `Toast ${this.id}`,
       height: 45,
@@ -48,6 +50,7 @@ export class AboutComponent implements OnInit, OnChanges {
       minWidth: 150,
       type: type,
       displayTime: 3500,
+      opacity: 0.5,
       animation: {
         show: {
           type: 'fade', duration: 400, from: 0, to: 1,
@@ -59,5 +62,9 @@ export class AboutComponent implements OnInit, OnChanges {
     },
     { position, direction });
     this.id += 1;
+  }
+
+  itemClick(e:any) {
+    notify({ message: `The "${e.itemData.hint}" button was clicked`, width: 320 }, 'success', 1000);
   }
 }

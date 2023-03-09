@@ -34,5 +34,33 @@
       (click)="showToast('warning')">
     </dx-button>
   </div>
+
+
 </div>
-<dx-toast [(visible)]="toastIsVisible" [type]="type" [message]="message"></dx-toast>
+<div class="flex flex-wrap content-center w-full gap-2 p-2">
+  testar
+  <dx-button-group>
+    <dx-button
+      text="danger"
+      icon="email"
+      type="danger">
+    </dx-button>
+    <dx-button
+      text="warning"
+      icon="email"
+      type="warning">
+    </dx-button>
+  </dx-button-group>
+</div>
+
+<dx-toast [(visible)]="toastIsVisible" [type]="type" [message]="message" class="opacity-50">
+</dx-toast>
+<div class="flex flex-wrap content-center w-full gap-2 p-2">
+  <dx-button-group
+    [items]="alignments"
+    keyExpr="alignment"
+    stylingMode="outlined"
+    [selectedItemKeys]="['left']"
+    (onItemClick)="itemClick($event)">
+  </dx-button-group>
+</div>
