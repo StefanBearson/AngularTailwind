@@ -9,10 +9,11 @@ import { ContentLayoutComponent } from './layout/content-layout/content-layout.c
 import { HeaderComponent } from './layout/header/header.component';
 import { OptionsComponent } from './layout/options/options.component'
 import { MenuComponent } from './layout/menu/menu.component'
+import { FooterComponent } from './layout/footer/footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent, HeaderComponent, ContentLayoutComponent, OptionsComponent, MenuComponent
+    AppComponent, HeaderComponent, ContentLayoutComponent, OptionsComponent, MenuComponent, FooterComponent
   ],
   imports: [
     BrowserModule,
