@@ -3,25 +3,22 @@
 @import 'tailwindcss/utilities';
 
 @import '@mdi/font/scss/materialdesignicons.scss';
-@import 'node_modules/prismjs/themes/prism-okaidia.css';
-@import 'node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css';
-@import 'node_modules/prismjs/plugins/line-highlight/prism-line-highlight.css';
-.btn {
-  @apply bg-blue-500 hover:bg-gray-500 text-white font-bold py-1 px-2 rounded
-}
+@import './assets/css/markdown.css';
 body {
   font:16px "Ubuntu";
-
 }
 *::-webkit-scrollbar {
   width: 10px;
 }
- 
+
 *::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
- 
+
 *::-webkit-scrollbar-thumb {
   background-color: rgb(108, 105, 105);
   outline: 1px solid rgb(95, 101, 107);
 }
+// .markdown-body *{
+//   background-color: red!important;
+// }
