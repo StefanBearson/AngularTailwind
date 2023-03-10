@@ -4,6 +4,7 @@
 
 @import '@mdi/font/scss/materialdesignicons.scss';
 @import './assets/css/markdown.css';
+
 body {
   font:16px "Ubuntu";
 }
@@ -19,6 +20,4 @@ body {
   background-color: rgb(108, 105, 105);
   outline: 1px solid rgb(95, 101, 107);
 }
-// .markdown-body *{
-//   background-color: red!important;
-// }
+

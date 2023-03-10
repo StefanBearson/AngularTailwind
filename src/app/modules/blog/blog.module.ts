@@ -1,12 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BlogComponent } from './blog.component';
-import { BlogRoutingModule } from './blog.routing';
+import { RouterModule } from '@angular/router';
+import { MarkdownModule } from 'ngx-markdown';
+
+import { BlogViewModule } from './blog-view/blog-view.module';
+import { BlogPostViewModule } from './blog-post-view/blog-post-view.module';
+
+
 
 @NgModule({
   imports: [
-    CommonModule, BlogRoutingModule
+    CommonModule,
+    RouterModule.forChild([
+      {path: '', pathMatch: 'full', loadChildren: () => import('./blog-view/blog-view.module').then(m => m.BlogViewModule)},
+      {path: 'post', loadChildren: () => import('./blog-post-view/blog-post-view.module').then(m => m.BlogPostViewModule)}
+    ]),
   ],
-  declarations: [BlogComponent]
 })
 export class BlogModule { }

@@ -1,4 +1,6 @@
-<div class="flex flex-row min-h-[500px] justify-center gap-2 markdown-body">
-  <textarea class="w-[45%] p-2" [(ngModel)]="markdown"></textarea>
-  <markdown class="markdown-body" lineNumbers class="w-[45%] p-2 " [data]="markdown"></markdown>
+<div class="flex flex-row min-h-[500px] justify-center gap-2 pt-4">
+  <textarea class="w-[45%] p-2 dark:bg-slate-600" [(ngModel)]="markdown"></textarea>
+  <div class="markdown-body w-[45%] p-2">
+    <markdown lineNumbers class="w-full" [data]="markdown"></markdown>
+  </div>
 </div>
