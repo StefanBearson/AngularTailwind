@@ -23,6 +23,7 @@
     "devextreme": "^22.2.4",
     "devextreme-angular": "^22.2.4",
     "devextreme-schematics": "^1.5.1",
+    "gray-matter": "^4.0.3",
     "lodash": "^4.17.21",
     "marked": "^4.2.12",
     "ngx-markdown": "^15.1.1",
