@@ -1,6 +1,8 @@
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { faker } from '@faker-js/faker/locale/sv';
 import {Observable, of} from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 
 import { Cool } from '../models/cool.model'
 
@@ -19,6 +21,25 @@ export class Alignment {
   icon!: string;
   alignment!: string;
   hint!: string;
+}
+
+export class PostRes{
+  props!: Posts[];
+}
+
+export class Posts {
+  slug!: string;
+  frontmatter!: Frontmatter 
+  content!: string;
+}
+
+export class Frontmatter {
+  title!: string;
+  author!: string;
+  category!: string;
+  date!: string;
+  bannerImage!: string;
+  tags!: string[]; 
 }
 
 function generateManyCool(items: number) : Cool[]{
@@ -70,7 +91,10 @@ const alignments: Alignment[] = [
 ];
 @Injectable({providedIn: 'root'})
 export class DataService {
-  
+
+  constructor(private http : HttpClient) {
+    
+  }
   getData(): Observable<Cool[]> {
     return of(generateManyCool(10))
   }
@@ -88,6 +112,18 @@ export class DataService {
       };
     });
   }
+
+  // getAllBlogs(): Observable<HttpResponse<PostRes>> {
+  //   return this.http.get<PostRes>("http://localhost:3001", {observe: 'response'});
+
+  // }
+  getAllBlogs() {
+    return this.http
+      .get<Posts[]>("http://localhost:3001")
+      // .pipe(map(data => data));
+
+  }
+
 
   getAlignments() : Alignment[] {
     return alignments;
