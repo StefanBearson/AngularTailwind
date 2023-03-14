@@ -1,7 +1,7 @@
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { faker } from '@faker-js/faker/locale/sv';
-import {Observable, of} from 'rxjs';
+import {Observable, of, throwError as observableThrowError} from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
 import { Cool } from '../models/cool.model'
@@ -95,6 +95,9 @@ export class DataService {
   constructor(private http : HttpClient) {
     
   }
+
+
+
   getData(): Observable<Cool[]> {
     return of(generateManyCool(10))
   }
@@ -118,14 +121,29 @@ export class DataService {
 
   // }
   getAllBlogs() {
+    console.log("getAllBlogs runs");
     return this.http
       .get<Posts[]>("http://localhost:3001")
       // .pipe(map(data => data));
 
   }
 
+  postBlogPost(post: Posts){
+    let options = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
+    console.log("test");
+    return this.http
+      .post<Posts>('http://localhost:3001', post, options)
+      .pipe(catchError(this.handleError));
+  }
 
   getAlignments() : Alignment[] {
     return alignments;
   }
+
+  private handleError(res: HttpErrorResponse | any) {
+    console.error(res.error || res.body.error);
+    return observableThrowError(res.error || 'Server error');
+  }
 }
+
+

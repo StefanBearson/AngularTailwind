@@ -13,7 +13,8 @@ import { BlogPostViewModule } from './blog-post-view/blog-post-view.module';
     CommonModule,
     RouterModule.forChild([
       {path: '', pathMatch: 'full', loadChildren: () => import('./blog-view/blog-view.module').then(m => m.BlogViewModule)},
-      {path: 'post', loadChildren: () => import('./blog-post-view/blog-post-view.module').then(m => m.BlogPostViewModule)}
+      {path: 'post', loadChildren: () => import('./blog-post-view/blog-post-view.module').then(m => m.BlogPostViewModule)},
+      {path: 'create', loadChildren: () => import('./create-post/create-post.module').then(m => m.CreatePostModule)}
     ]),
   ],
 })

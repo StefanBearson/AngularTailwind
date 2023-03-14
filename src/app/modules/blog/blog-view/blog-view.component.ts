@@ -14,10 +14,10 @@ export class BlogViewComponent implements OnInit {
 
   constructor(private dataService: DataService) {
     this.getPosts();
-
   }
 
   ngOnInit() {
+    this.getPosts();
     console.log('posts:'+ this.posts);
   }
 
