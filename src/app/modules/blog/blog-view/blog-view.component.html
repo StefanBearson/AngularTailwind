@@ -1,14 +1,11 @@
-<!-- <div class="grid pt-2 justify-items-center">
-  <div class="w-[50%]">
-    <div class="p-2 bg-slate-100 dark:bg-slate-600 markdown-body" markdown [src]="'./assets/blog/blog.md'"></div>
+<div class="h-full bg-slate-100 dark:bg-slate-700">
+  <a routerLink="/blog/create" class="p-2 link" link-button>
+    <p><span class="mdi mdi-language-markdown-outline"> Create</span></p>
+  </a>
+
+
+  <div *ngFor="let post of posts" class="p-2 m-2 bg-white border dark:bg-slate-800">
+    <!-- {{post.frontmatter.title}} -->
+    <markdown class="markdown-body">{{post.content}}</markdown>
   </div>
-</div> -->
-<a routerLink="/blog/create" class="p-2 link" link-button>
-  <p><span class="mdi mdi-language-markdown-outline"> Create</span></p>
-</a>
-
-
-<div *ngFor="let post of posts">
-  <!-- {{post.frontmatter.title}} -->
-  <markdown class="markdown-body">{{post.content}}</markdown>
 </div>

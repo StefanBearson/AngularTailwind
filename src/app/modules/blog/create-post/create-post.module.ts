@@ -4,13 +4,18 @@ import { RouterModule } from '@angular/router';
 
 
 import { CreatePostComponent } from './create-post.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MarkdownModule } from 'ngx-markdown';
 
 @NgModule({
   imports: [
     RouterModule.forChild([
       { path: '', component: CreatePostComponent}
     ]),
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MarkdownModule
   ],
   declarations: [CreatePostComponent]
 })

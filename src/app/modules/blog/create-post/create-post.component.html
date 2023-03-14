@@ -2,3 +2,40 @@
 <a (click)="test()" class="p-2 link" link-button>
   <p><span class="mdi mdi-language-markdown-outline"> Test ME</span></p>
 </a>
+
+<form [formGroup]="postToBeCreated" class="flex justify-center">
+  <div class="w-80">
+    <div class="m-2">
+      <label for="title" class="">Title: </label>
+      <input id="title" type="text" class="w-full" formControlName="title">
+    </div>
+    <div class="m-2">
+      <label for="author">Author: </label>
+      <input id="author" type="text" class="w-full" formControlName="author">
+    </div>
+    <div class="m-2">
+      <label for="category">Category: </label>
+      <input id="category" type="text" class="w-full" formControlName="category">
+    </div>
+  </div>
+  <div class="w-80">
+    <div class="m-2">
+      <label for="date" class="w-80">Date: </label>
+      <input id="date" type="date" class="w-full" formControlName="date">
+    </div>
+    <div class="m-2">
+      <label for=" bannerImage">BannerImage: </label>
+      <input id=" bannerImage" type="text" class="w-full" formControlName="bannerImage">
+    </div>
+    <div class="m-2">
+      <label for="tags">Tags: </label>
+      <input id="tags" type="text" class="w-full" formControlName="tags">
+    </div>
+  </div>
+</form>
+<div class="flex flex-row min-h-[500px] justify-center gap-2 pt-4">
+  <textarea class="p-2 w-80 dark:bg-slate-600" [(ngModel)]="markdown"></textarea>
+  <div class="p-2 markdown-body w-80">
+    <markdown lineNumbers class="w-full" [data]="markdown"></markdown>
+  </div>
+</div>

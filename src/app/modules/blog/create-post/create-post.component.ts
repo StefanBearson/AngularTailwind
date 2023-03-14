@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { DataService, Posts } from 'src/app/services/data.service';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-create-post',
@@ -7,20 +9,17 @@ import { DataService, Posts } from 'src/app/services/data.service';
   styleUrls: ['./create-post.component.css']
 })
 export class CreatePostComponent implements OnInit {
-  @Input() post!: Posts;
-  
-  fakedata: Posts = {
-    slug: "detta är från Angular",
-    content: "this is content! more text",
-    frontmatter: {
-      title: "title",
-      author: "author",
-      category: "catagory",
-      date: "2023-01-01",
-      bannerImage: "image.img",
-      tags: ["angular", "tips", "how how"]
-    }
-  };
+  // @Input() post!: Posts;
+  markdown = '';
+
+  postToBeCreated = new FormGroup({
+    title: new FormControl(''),
+    author: new FormControl('Stefan Björnson'),
+    category: new FormControl(''),
+    date: new FormControl(formatDate(Date.now(),'yyyy-MM-dd', 'en')),
+    bannerImage: new FormControl(''),
+    tags: new FormControl(''),
+  })
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
@@ -28,10 +27,20 @@ export class CreatePostComponent implements OnInit {
 
 
   test(){
-    console.log("hello")
+    let data: Posts = {
+      slug: this.postToBeCreated.value.title?.split(' ').join('-') || "",
+      content: this.markdown,
+      frontmatter: {
+        title: this.postToBeCreated.value.title || "",
+        author: this.postToBeCreated.value.author || "",
+        category: this.postToBeCreated.value.category || "",
+        date: this.postToBeCreated.value.date || "",
+        bannerImage: this.postToBeCreated.value.bannerImage || "",
+        tags: this.postToBeCreated.value.tags?.split(',') || []
+      }
+    };
 
 
-
-    this.dataService.postBlogPost(this.fakedata).subscribe();
+    this.dataService.postBlogPost(data).subscribe();
   }
 }
