@@ -29,7 +29,7 @@ export class PostRes{
 
 export class Posts {
   slug!: string;
-  frontmatter!: Frontmatter 
+  frontmatter!: Frontmatter
   content!: string;
 }
 
@@ -39,7 +39,7 @@ export class Frontmatter {
   category!: string;
   date!: string;
   bannerImage!: string;
-  tags!: string[]; 
+  tags!: string[];
 }
 
 function generateManyCool(items: number) : Cool[]{
@@ -93,7 +93,7 @@ const alignments: Alignment[] = [
 export class DataService {
 
   constructor(private http : HttpClient) {
-    
+
   }
 
 
@@ -137,9 +137,11 @@ export class DataService {
   }
 
   postImage(file: File){
+    const formData: FormData = new FormData();
+    formData.append('file', file);
 
     return this.http
-      .post<File>('http://localhost:3001/image', file)
+      .post<File>('http://localhost:3001/image', formData)
       .pipe(catchError(this.handleError));
   }
 
