@@ -136,6 +136,15 @@ export class DataService {
       .pipe(catchError(this.handleError));
   }
 
+  postImage(file: File){
+
+    return this.http
+      .post<File>('http://localhost:3001/image', file)
+      .pipe(catchError(this.handleError));
+  }
+
+
+
   getAlignments() : Alignment[] {
     return alignments;
   }

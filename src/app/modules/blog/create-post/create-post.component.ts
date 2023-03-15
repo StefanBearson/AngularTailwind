@@ -1,7 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { DataService, Posts } from 'src/app/services/data.service';
 import { formatDate } from '@angular/common';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-create-post',
@@ -10,7 +11,15 @@ import { formatDate } from '@angular/common';
 })
 export class CreatePostComponent implements OnInit {
   // @Input() post!: Posts;
+  private file!: File;
   markdown = '';
+  
+
+  @HostListener('change', ['$event.target.files']) emitFiles( event: FileList ) {
+    const file = event && event.item(0);
+    if(file)
+      this.file = file;
+  }
 
   postToBeCreated = new FormGroup({
     title: new FormControl(''),
@@ -19,14 +28,14 @@ export class CreatePostComponent implements OnInit {
     date: new FormControl(formatDate(Date.now(),'yyyy-MM-dd', 'en')),
     bannerImage: new FormControl(''),
     tags: new FormControl(''),
+    image: new FormControl(null),
   })
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
   }
 
-
-  test(){
+  savePost(){
     let data: Posts = {
       slug: this.postToBeCreated.value.title?.split(' ').join('-') || "",
       content: this.markdown,
@@ -40,7 +49,12 @@ export class CreatePostComponent implements OnInit {
       }
     };
 
+    // this.file = this.postToBeCreated.value.image
+    console.log("image: ", this.file?.arrayBuffer);
+    this.dataService.postImage(this.file).subscribe();
 
-    this.dataService.postBlogPost(data).subscribe();
+    // this.dataService.postBlogPost(data).subscribe();
   }
+
+  
 }
