@@ -2,11 +2,20 @@
   <a routerLink="/blog/create" class="p-2 link" link-button>
     <p><span class="mdi mdi-language-markdown-outline"> Create</span></p>
   </a>
-
-
-  <div *ngFor="let post of posts" class="p-2 m-2 bg-white border dark:bg-slate-800">
-    <img *ngIf="post.frontmatter.bannerImage" src="http://localhost:3001/images/{{post.frontmatter.bannerImage}}"/>
-    {{post.frontmatter.title}}
-    <markdown class="markdown-body">{{post.content}}</markdown>
+  <div class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2 lg:mx-16 md:mx-2">
+    <div *ngFor="let post of posts" class="lg:flex">
+        <img class="object-cover w-full h-56 rounded-lg lg:w-64" src="http://localhost:3001/images/{{post.frontmatter.bannerImage}}" alt="">
+  
+        <div class="flex flex-col justify-between py-6 lg:mx-6">
+            <a routerLink="/blog/post/{{post.slug}}" class="text-xl font-semibold text-gray-800 hover:underline dark:text-white ">
+              {{post.frontmatter.title}}
+            </a>
+            
+            <span class="text-sm text-gray-500 dark:text-gray-300">{{post.frontmatter.date}}</span>
+        </div>
+    </div>
   </div>
+
+
 </div>
+

@@ -121,10 +121,15 @@ export class DataService {
 
   // }
   getAllBlogs() {
-    console.log("getAllBlogs runs");
     return this.http
       .get<Posts[]>("http://localhost:3001")
-      // .pipe(map(data => data));
+
+  }
+
+  getBlogPost(slug: string) {
+    console.log("getAllBlogs runs", slug);
+    return this.http
+      .get<Posts>("http://localhost:3001/post/" + slug)
 
   }
 
