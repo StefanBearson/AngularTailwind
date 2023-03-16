@@ -44,7 +44,7 @@ export class CreatePostComponent implements OnInit {
         author: this.postToBeCreated.value.author || "",
         category: this.postToBeCreated.value.category || "",
         date: this.postToBeCreated.value.date || "",
-        bannerImage: this.postToBeCreated.value.bannerImage || "",
+        bannerImage: this.file.name || "",
         tags: this.postToBeCreated.value.tags?.split(',') || []
       }
     };

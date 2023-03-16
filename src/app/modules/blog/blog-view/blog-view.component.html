@@ -5,7 +5,8 @@
 
 
   <div *ngFor="let post of posts" class="p-2 m-2 bg-white border dark:bg-slate-800">
-    <!-- {{post.frontmatter.title}} -->
+    <img *ngIf="post.frontmatter.bannerImage" src="http://localhost:3001/images/{{post.frontmatter.bannerImage}}"/>
+    {{post.frontmatter.title}}
     <markdown class="markdown-body">{{post.content}}</markdown>
   </div>
 </div>
