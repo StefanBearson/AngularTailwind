@@ -141,7 +141,7 @@ export class DataService {
     formData.append('file', file);
 
     return this.http
-      .post<File>('http://localhost:3001/image', formData)
+      .post<File>('http://localhost:3001/postImage', formData)
       .pipe(catchError(this.handleError));
   }
 

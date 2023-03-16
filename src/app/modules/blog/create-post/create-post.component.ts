@@ -53,7 +53,7 @@ export class CreatePostComponent implements OnInit {
     console.log("image: ", this.file?.arrayBuffer);
     this.dataService.postImage(this.file).subscribe();
 
-    // this.dataService.postBlogPost(data).subscribe();
+    this.dataService.postBlogPost(data).subscribe();
   }
 
   
