@@ -5,9 +5,10 @@ import { DataService, Posts } from 'src/app/services/data.service';
 
 
 @Component({
-  selector: 'app-blog-post-view',
-  templateUrl: './blog-post-view.component.html',
-  styleUrls: ['./blog-post-view.component.css']
+    selector: 'app-blog-post-view',
+    templateUrl: './blog-post-view.component.html',
+    styleUrls: ['./blog-post-view.component.css'],
+    standalone: false
 })
 export class BlogPostViewComponent implements OnInit, OnDestroy {
   private sub!: Subscription

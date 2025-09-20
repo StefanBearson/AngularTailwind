@@ -3,9 +3,10 @@ import { Observable, Subscription } from 'rxjs';
 import { DataService, Posts,PostRes} from 'src/app/services/data.service';
 
 @Component({
-  selector: 'app-blog-view',
-  templateUrl: './blog-view.component.html',
-  styleUrls: ['./blog-view.component.css']
+    selector: 'app-blog-view',
+    templateUrl: './blog-view.component.html',
+    styleUrls: ['./blog-view.component.css'],
+    standalone: false
 })
 export class BlogViewComponent implements OnInit {
   posts!: Posts[];

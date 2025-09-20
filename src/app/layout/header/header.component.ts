@@ -4,10 +4,11 @@ import { LayoutService } from '../../services/layout.service'
 
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css'],
-  providers: [ ]
+    selector: 'app-header',
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.css'],
+    providers: [],
+    standalone: false
 })
 export class HeaderComponent implements OnInit {
   title$!: Observable<string>;

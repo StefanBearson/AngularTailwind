@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-md',
-  templateUrl: './md.component.html',
-  styleUrls: ['./md.component.css']
+    selector: 'app-md',
+    templateUrl: './md.component.html',
+    styleUrls: ['./md.component.css'],
+    standalone: false
 })
 export class MdComponent implements OnInit {
   markdown = `## Markdown __rulez__!

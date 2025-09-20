@@ -3,9 +3,10 @@ import { DataService, ComplaintsWithPercent } from 'src/app/services/data.servic
 import { LayoutService } from 'src/app/services/layout.service'
 
 @Component({
-  selector: 'app-chart',
-  templateUrl: './chart.component.html',
-  styleUrls: ['./chart.component.css']
+    selector: 'app-chart',
+    templateUrl: './chart.component.html',
+    styleUrls: ['./chart.component.css'],
+    standalone: false
 })
 export class ChartComponent implements OnInit {
   dataSource!: ComplaintsWithPercent[];

@@ -7,9 +7,10 @@ import { DataService } from 'src/app/services/data.service';
 import { Cool } from 'src/app/models/cool.model';
 
 @Component({
-  selector: 'app-grid',
-  templateUrl: './grid.component.html',
-  styleUrls: ['./grid.component.css'],
+    selector: 'app-grid',
+    templateUrl: './grid.component.html',
+    styleUrls: ['./grid.component.css'],
+    standalone: false
 })
 export class GridComponent implements OnInit {
   dataSource: DataSource | null = null;

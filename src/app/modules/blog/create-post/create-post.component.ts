@@ -5,9 +5,10 @@ import { formatDate } from '@angular/common';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-create-post',
-  templateUrl: './create-post.component.html',
-  styleUrls: ['./create-post.component.css']
+    selector: 'app-create-post',
+    templateUrl: './create-post.component.html',
+    styleUrls: ['./create-post.component.css'],
+    standalone: false
 })
 export class CreatePostComponent implements OnInit {
   // @Input() post!: Posts;
