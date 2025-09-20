@@ -14,7 +14,7 @@ export class AboutComponent implements OnInit, OnChanges {
   rightOpen$!: Observable<boolean>;
   toastIsVisible = false;
   message = 'testar';
-  type = 'info';
+  type: 'error' | 'info' | 'success' | 'warning' = 'info';
   types: string[] = ['error', 'info', 'success', 'warning'];
   id = 1;
 //buttongroup

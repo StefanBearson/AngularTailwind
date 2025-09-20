@@ -11,19 +11,12 @@ import { HeaderComponent } from './layout/header/header.component';
 import { OptionsComponent } from './layout/options/options.component'
 import { MenuComponent } from './layout/menu/menu.component'
 import { FooterComponent } from './layout/footer/footer.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-@NgModule({
-  declarations: [
-    AppComponent, HeaderComponent, ContentLayoutComponent, OptionsComponent, MenuComponent, FooterComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    MarkdownModule.forRoot()
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+@NgModule({ declarations: [
+        AppComponent, HeaderComponent, ContentLayoutComponent, OptionsComponent, MenuComponent, FooterComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MarkdownModule.forRoot()], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
